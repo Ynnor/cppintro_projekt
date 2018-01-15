@@ -1,12 +1,13 @@
-#include <iostream>
-#include <iomanip>
-#include <vector>
 #include <String>
+#include <iomanip>
+#include <iostream>
+#include <vector>
 
-int menuChoice(std::vector<std::string> menu){
+int menuChoice(std::vector<std::string> menu) {
     int choice;
-    for(int i = 0; i < menu.size(); i++) {
-        std::cout << static_cast<char>(i) << ". " << menu[i] << '\n';
+    std::cout << '\n';
+    for (int i = 0; i < menu.size(); i++) {
+        std::cout << i + 1 << ". " << menu[i] << '\n';
     }
     std::cin >> choice;
     while (std::cin.fail() || choice < 0 || choice > 3) {

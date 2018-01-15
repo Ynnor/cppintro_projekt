@@ -22,24 +22,24 @@ Person addPerson(std::vector<Person> persons) {
     p.lastName = lastName;
     p.height = h;
 
-    signature += firstName.substr(0,3);
-    signature += std::string(3-signature.size(),'x');
-    signature += lastName.substr(0,3);
-    signature += std::string(6-signature.size(),'x');
+    signature += firstName.substr(0, 3);
+    signature += std::string(3 - signature.size(), 'x');
+    signature += lastName.substr(0, 3);
+    signature += std::string(6 - signature.size(), 'x');
     for (auto &c : signature) {
-		c = tolower(c);
-	}
-    signature += "01";
-        
-    while(!searchFor(persons,signature)){
-        counter++;
-        signature = signature.substr(0,6);
-        if (counter < 10) {
-            signature += '0';
-            signature += std::to_string(counter);
-        } else {
-            signature += std::to_string(counter);
-        }
+        c = tolower(c);
     }
+    signature += "01";
+    p.signature = signature;
+    // while(!searchFor(persons,signature)){
+    //     counter++;
+    //     signature = signature.substr(0,6);
+    //     if (counter < 10) {
+    //         signature += '0';
+    //         signature += std::to_string(counter);
+    //     } else {
+    //         signature += std::to_string(counter);
+    //     }
+    // }
     return p;
 }

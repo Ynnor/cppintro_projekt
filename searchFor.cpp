@@ -1,10 +1,10 @@
 #include "constants.h"
-#include <vector>
 #include <string>
+#include <vector>
 
-bool searthFor(std::vector<Person> persons, std::string searchString){
+bool searthFor(std::vector<Person> persons, std::string searchString) {
     for (int i = 0; i < persons.size(); i++) {
-        if (persons[i].signature == searchString){
+        if (persons[i].signature == searchString) {
             return true;
         }
     }

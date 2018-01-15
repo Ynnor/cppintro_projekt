@@ -1,48 +1,52 @@
-#include "constants.h"
-#include <vector>
-#include "menuChoice.cpp"
 #include "addPerson.cpp"
-#include "printList.cpp"
+#include "constants.h"
+#include "find.cpp"
 #include "loadList.cpp"
+#include "menuChoice.cpp"
+#include "printList.cpp"
+#include <vector>
 
-int main (){
+int main() {
     std::vector<Person> persons;
     bool running = true;
-    const std::vector<std::string> menu{"Lägg till person","Skriv ut lista","Sök i lista",
-    "Ta bort person", "Sortera lista", "Slumpa lista", "Spara lista", "Ladda lista",
-    "Avsluta"};
+    const std::vector<std::string> menu{
+        "Lägg till person", "Skriv ut lista", "Sök i lista",
+        "Ta bort person",   "Sortera lista",  "Slumpa lista",
+        "Spara lista",      "Ladda lista",    "Avsluta"};
     int choice;
 
-    while (running){
-        switch (menuChoice(menu)){
-            case 1:
+    while (running) {
+        switch (menuChoice(menu)) {
+        case 1:
             persons.push_back(addPerson(persons));
             break;
-            case 2:
+        case 2:
             printList(persons);
             break;
-    //     case 3:
-    //     find(persons);
-    //     break;
-    //     deletePerson();
-    //     case 4:
-    //     sortList();
-    //     break;
-    //     case 5:
-    //     randomize();
-    //     break;
-    //     case 6:
-    //     saveList(persons);
-    //     break;
-            case 7:
+        case 3:
+            find(persons);
+            break;
+        // case 4;
+        // deletePerson();
+        // break;
+        //     case 5:
+        //     sortList();
+        //     break;
+        //     case 6:
+        //     randomize();
+        //     break;
+        //     case 7:
+        //     saveList(persons);
+        //     break;
+        case 8:
             persons = loadList();
             break;
-    //     case 8:
-    //     running = false;
+        case 9:
+            running = false;
         };
-    // } else {
-        
-    // }
+        // } else {
+
+        // }
     };
     return 0;
 }
