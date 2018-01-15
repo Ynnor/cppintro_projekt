@@ -11,12 +11,11 @@ struct Person {
 };
 enum SortMode {name=1, signature, height};
 
-void printPerson(Person);
 int menuChoice(std::vector<std::string>);
 void addPerson(std::vector<Person> &persons);
-void printList(std::vector<Person>);
-void find(std::vector<Person>);
-bool searchFor(std::vector<Person>, std::string);
+void print(std::vector<Person>);
+void findPerson(std::vector<Person>);
+bool personExist(std::vector<Person>, std::string);
 void deletePerson(std::vector<Person> &persons);
 void sort(std::vector<Person> &persons);
 void randomize(std::vector<Person> &persons);

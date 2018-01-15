@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-void find(std::vector<Person> persons) {
+void findPerson(std::vector<Person> persons) {
     bool found = false;
     std::string signature;
     std::cout << "Skriv in signaturen du vill söka efter: ";
@@ -17,4 +17,13 @@ void find(std::vector<Person> persons) {
     if (!found) {
         std::cout << "Personen hittades inte i listan";
     }
+}
+
+bool personExist(std::vector<Person> persons, std::string searchString) {
+    for (int i = 0; i < persons.size(); i++) {
+        if (persons[i].signature == searchString) {
+            return true;
+        }
+    }
+    return false;
 }

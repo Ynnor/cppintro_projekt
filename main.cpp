@@ -4,7 +4,7 @@
 #include "find.cpp"
 #include "loadList.cpp"
 #include "menuChoice.cpp"
-#include "printList.cpp"
+#include "print.cpp"
 #include "randomize.cpp"
 #include "saveList.cpp"
 #include "sort.cpp"
@@ -27,10 +27,10 @@ int main() {
             addPerson(persons);
             break;
         case 2:
-            printList(persons);
+            print(persons);
             break;
         case 3:
-            find(persons);
+            findPerson(persons);
             break;
         case 4:
             deletePerson(persons);

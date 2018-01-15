@@ -1,5 +1,4 @@
 #include "constants.h"
-#include "searchFor.cpp"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -31,7 +30,7 @@ void addPerson(std::vector<Person> &persons) {
         c = tolower(c);
     }
     signature += "01";
-    while (searchFor(persons, signature)) {
+    while (personExist(persons, signature)) {
         counter++;
         signature = signature.substr(0, 6);
         if (counter < 10) {
