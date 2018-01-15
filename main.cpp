@@ -1,10 +1,11 @@
 #include "addPerson.cpp"
 #include "constants.h"
+#include "deletePerson.cpp"
 #include "find.cpp"
 #include "loadList.cpp"
 #include "menuChoice.cpp"
 #include "printList.cpp"
-#include "deletePerson.cpp"
+#include "saveList.cpp"
 #include <vector>
 
 int main() {
@@ -30,24 +31,21 @@ int main() {
         case 4:
             deletePerson(persons);
             break;
-        //     case 5:
-        //     sortList();
-        //     break;
-        //     case 6:
-        //     randomize();
-        //     break;
-        //     case 7:
-        //     saveList(persons);
-        //     break;
+            //     case 5:
+            //     sortList();
+            //     break;
+        case 6:
+            randomize(persons);
+            break;
+        case 7:
+            saveList(persons);
+            break;
         case 8:
             persons = loadList();
             break;
         case 9:
             running = false;
         };
-        // } else {
-
-        // }
     };
     return 0;
 }
