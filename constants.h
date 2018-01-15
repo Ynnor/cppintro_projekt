@@ -19,7 +19,7 @@ void printList(std::vector<Person> persons);
 void find(std::vector<Person> persons);
 bool searchFor(std::vector<Person> persons, std::string signature);
 void deletePerson(std::vector<Person> &persons);
-void sortList(std::vector<Person> persons);
+void sort(std::vector<Person> &persons);
 void randomize(std::vector<Person> persons);
 void saveList(std::vector<Person> persons);
 std::vector<Person> loadList();

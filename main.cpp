@@ -7,6 +7,7 @@
 #include "printList.cpp"
 #include "randomize.cpp"
 #include "saveList.cpp"
+#include "sort.cpp"
 #include <vector>
 
 int main() {
@@ -32,9 +33,9 @@ int main() {
         case 4:
             deletePerson(persons);
             break;
-            //     case 5:
-            //     sortList();
-            //     break;
+                case 5:
+                sort(persons);
+                break;
         case 6:
             randomize(persons);
             break;
