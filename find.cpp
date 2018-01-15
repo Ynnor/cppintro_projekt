@@ -7,7 +7,6 @@ void find(std::vector<Person> persons) {
     bool found = false;
     std::string signature;
     std::cout << "Skriv in signaturen du vill söka efter: ";
-    std::cin.ignore();
     getline(std::cin, signature);
     for (auto p : persons) {
         if (p.signature == signature) {

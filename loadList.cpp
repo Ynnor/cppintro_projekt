@@ -23,6 +23,8 @@ std::vector<Person> loadList() {
         delim = s.find(',', index);
         p.height = s.substr(index, delim - index);
         index = delim + 1;
+        delim = s.find(',', index);
+        p.signature = s.substr(index, delim - index);
         returnvect.push_back(p);
     }
     return returnvect;

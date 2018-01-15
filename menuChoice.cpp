@@ -16,5 +16,6 @@ int menuChoice(std::vector<std::string> menu) {
         std::cin.ignore(256, '\n');
         std::cin >> choice;
     }
+    std::cin.ignore(256,'\n');
     return choice;
 }

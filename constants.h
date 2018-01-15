@@ -9,15 +9,16 @@ struct Person {
     std::string signature;
     std::string height;
 };
+enum SortMode {name, signature, height};
 
 void printPerson(Person);
 int menuChoice(std::vector<std::string>);
 bool validChoice(std::string input);
-Person addPerson(std::vector<Person> persons);
+void addPerson(std::vector<Person> &persons);
 void printList(std::vector<Person> persons);
 void find(std::vector<Person> persons);
 bool searchFor(std::vector<Person> persons, std::string signature);
-void deletePerson(std::vector<Person> persons);
+void deletePerson(std::vector<Person> &persons);
 void sortList(std::vector<Person> persons);
 void randomize(std::vector<Person> persons);
 void saveList(std::vector<Person> persons);

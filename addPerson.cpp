@@ -4,13 +4,12 @@
 #include <string>
 #include <vector>
 
-Person addPerson(std::vector<Person> persons) {
+void addPerson(std::vector<Person> &persons) {
     std::string firstName, lastName, signature, h;
     Person p;
     int counter = 1;
     std::cout << std::string(32, '\n');
     std::cout << "Vad är förnamnet på personen som ska läggas till? ";
-    std::cin.ignore();
     getline(std::cin, firstName);
     std::cout << "Vad är efternamnet på personen som ska läggas till? ";
     getline(std::cin, lastName);
@@ -46,5 +45,5 @@ Person addPerson(std::vector<Person> persons) {
         }
     }
     p.signature = signature;
-    return p;
+    persons.push_back(p);
 }

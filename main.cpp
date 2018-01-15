@@ -5,6 +5,7 @@
 #include "loadList.cpp"
 #include "menuChoice.cpp"
 #include "printList.cpp"
+#include "randomize.cpp"
 #include "saveList.cpp"
 #include <vector>
 
@@ -20,7 +21,7 @@ int main() {
     while (running) {
         switch (menuChoice(menu)) {
         case 1:
-            persons.push_back(addPerson(persons));
+            addPerson(persons);
             break;
         case 2:
             printList(persons);
