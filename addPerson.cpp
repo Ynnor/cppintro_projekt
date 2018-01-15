@@ -8,16 +8,21 @@ Person addPerson(std::vector<Person> persons) {
     std::string firstName, lastName, signature, h;
     Person p;
     int counter = 1;
-    std::cout << std::string(20, '\n');
-
+    std::cout << std::string(32, '\n');
     std::cout << "Vad är förnamnet på personen som ska läggas till? ";
     std::cin.ignore();
     getline(std::cin, firstName);
     std::cout << "Vad är efternamnet på personen som ska läggas till? ";
     getline(std::cin, lastName);
-    std::cout << "Hur lång är personen som läggs till? ";
+    std::cout << "Hur lång är personen som läggs till? [m.cm] ";
     getline(std::cin, h);
 
+    if (h.find('.') == h.npos) {
+        h.push_back('.');
+    }
+    while (h.substr(h.find('.') + 1).size() < 2) {
+        h.push_back('0');
+    }
     p.firstName = firstName;
     p.lastName = lastName;
     p.height = h;
@@ -30,16 +35,16 @@ Person addPerson(std::vector<Person> persons) {
         c = tolower(c);
     }
     signature += "01";
+    while (searchFor(persons, signature)) {
+        counter++;
+        signature = signature.substr(0, 6);
+        if (counter < 10) {
+            signature += '0';
+            signature += std::to_string(counter);
+        } else {
+            signature += std::to_string(counter);
+        }
+    }
     p.signature = signature;
-    // while(!searchFor(persons,signature)){
-    //     counter++;
-    //     signature = signature.substr(0,6);
-    //     if (counter < 10) {
-    //         signature += '0';
-    //         signature += std::to_string(counter);
-    //     } else {
-    //         signature += std::to_string(counter);
-    //     }
-    // }
     return p;
 }

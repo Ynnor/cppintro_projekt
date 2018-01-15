@@ -4,6 +4,7 @@
 #include "loadList.cpp"
 #include "menuChoice.cpp"
 #include "printList.cpp"
+#include "deletePerson.cpp"
 #include <vector>
 
 int main() {
@@ -26,9 +27,9 @@ int main() {
         case 3:
             find(persons);
             break;
-        // case 4;
-        // deletePerson();
-        // break;
+        case 4:
+            deletePerson(persons);
+            break;
         //     case 5:
         //     sortList();
         //     break;
