@@ -1,19 +1,23 @@
 #include "constants.h"
 #include <algorithm>
 
+bool byName(Person, Person);
+bool bySign(Person, Person);
+bool byHeight(Person, Person);
+
 void sort(std::vector<Person> &persons) {
     std::vector<std::string> menu{"Sortera på namn", "Sortera på signatur",
                                   "Sortera på längd"};
     SortMode choice = static_cast<SortMode>(menuChoice(menu));
     switch (choice) {
     case name:
-        std::sort(persons.begin(), persons.end(),byName);
-                 break;
+        std::sort(persons.begin(), persons.end(), byName);
+        break;
     case signature:
-        std::sort(persons.begin(),persons.end(),bySign);
+        std::sort(persons.begin(), persons.end(), bySign);
         break;
     case height:
-        std::sort(persons.begin(),persons.end(),byHeight);
+        std::sort(persons.begin(), persons.end(), byHeight);
         break;
     }
 }
@@ -43,4 +47,4 @@ bool byName(Person i, Person j) {
     }
 }
 bool bySign(Person i, Person j) { return (i.signature < j.signature); }
-bool byHeight(Person i, Person j) { return (i.height < j.height); }
+bool byHeight(Person i, Person j) { return (i.height > j.height); }

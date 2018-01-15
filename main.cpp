@@ -20,6 +20,8 @@ int main() {
     int choice;
 
     while (running) {
+        std::cout << "Du har nu " << persons.size()
+                  << " personer i din lista. Vad vill du göra härnäst?";
         switch (menuChoice(menu)) {
         case 1:
             addPerson(persons);
@@ -33,9 +35,9 @@ int main() {
         case 4:
             deletePerson(persons);
             break;
-                case 5:
-                sort(persons);
-                break;
+        case 5:
+            sort(persons);
+            break;
         case 6:
             randomize(persons);
             break;
@@ -43,7 +45,7 @@ int main() {
             saveList(persons);
             break;
         case 8:
-            persons = loadList();
+            loadList(persons);
             break;
         case 9:
             running = false;

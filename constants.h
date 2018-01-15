@@ -7,20 +7,20 @@ struct Person {
     std::string firstName;
     std::string lastName;
     std::string signature;
-    std::string height;
+    float height;
 };
-enum SortMode {name, signature, height};
+enum SortMode {name=1, signature, height};
 
 void printPerson(Person);
 int menuChoice(std::vector<std::string>);
-bool validChoice(std::string input);
 void addPerson(std::vector<Person> &persons);
-void printList(std::vector<Person> persons);
-void find(std::vector<Person> persons);
-bool searchFor(std::vector<Person> persons, std::string signature);
+void printList(std::vector<Person>);
+void find(std::vector<Person>);
+bool searchFor(std::vector<Person>, std::string);
 void deletePerson(std::vector<Person> &persons);
 void sort(std::vector<Person> &persons);
-void randomize(std::vector<Person> persons);
-void saveList(std::vector<Person> persons);
-std::vector<Person> loadList();
+void randomize(std::vector<Person> &persons);
+void saveList(std::vector<Person>);
+void loadList(std::vector<Person> &persons);
+void clear(std::string);
 #endif

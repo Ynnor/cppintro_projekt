@@ -9,9 +9,15 @@ void saveList(std::vector<Person> persons) {
     getline(std::cin, fileName);
     std::ofstream outFile;
     outFile.open(fileName, std::ofstream::out | std::ofstream::trunc);
-    for (auto p : persons) {
-        outFile << p.firstName << "," << p.lastName << "," << p.height << ","
-                << p.signature << std::endl;
+    if (outFile.is_open()) {
+        for (auto p : persons) {
+            outFile << p.firstName << "," << p.lastName << "," << p.height
+                    << "," << p.signature << std::endl;
+        }
+        clear("Listan har sparats till " + fileName);
+        outFile.close();
+    } else {
+        clear("Något gick fel vid sparning av listan.");
     }
     outFile.close();
 }
