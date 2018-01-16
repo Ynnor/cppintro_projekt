@@ -8,7 +8,7 @@ void deletePerson(std::vector<Person> &persons) {
         << "Skriv in signaturen för den person du vill radera ur listan: ";
     getline(std::cin, signature);
 
-    for (int i = 0; i < persons.size(); i++) {
+    for (unsigned int i = 0; i < persons.size(); i++) {
         if (persons[i].signature == signature) {
             index = i;
         }

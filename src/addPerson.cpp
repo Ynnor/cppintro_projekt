@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-
 void addPerson(std::vector<Person> &persons) {
     std::string firstName, lastName, signature;
     float height;
@@ -27,7 +26,7 @@ void addPerson(std::vector<Person> &persons) {
     signature += lastName.substr(0, 3);
     signature += std::string(6 - signature.size(), 'x');
     for (auto &c : signature) {
-        c = tolower(c);
+        c = char(tolower(c));
     }
     signature += "01";
     while (personExist(persons, signature)) {

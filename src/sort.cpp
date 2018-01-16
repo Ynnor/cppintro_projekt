@@ -23,28 +23,16 @@ void sort(std::vector<Person> &persons) {
 }
 
 bool byName(Person i, Person j) {
-    std::string lastName1 = i.lastName;
-    std::string lastName2 = j.lastName;
-    std::string firstName1 = i.firstName;
-    std::string firstName2 = j.firstName;
+    std::string name1 = i.lastName + " " +i.firstName;
+    std::string name2 = j.lastName + " " +j.firstName;
 
-    for (auto &c : lastName1) {
-        tolower(c);
+    for (unsigned int i = 0; i < name1.size(); i++) {
+        name1[i] = char(tolower(name1[i]));
     }
-    for (auto &c : lastName2) {
-        tolower(c);
+    for (unsigned int i = 0; i < name2.size(); i++) {
+        name2[i] = char(tolower(name2[i]));
     }
-    if (lastName1 == lastName2) {
-        for (auto &c : firstName1) {
-            tolower(c);
-        }
-        for (auto &c : firstName2) {
-            tolower(c);
-        }
-        return (firstName1 < firstName2);
-    } else {
-        return (lastName1 < lastName2);
-    }
+    return name1 < name2;
 }
 bool bySign(Person i, Person j) { return (i.signature < j.signature); }
 bool byHeight(Person i, Person j) { return (i.height > j.height); }

@@ -1,13 +1,5 @@
-#include "addPerson.cpp"
 #include "constants.h"
-#include "deletePerson.cpp"
-#include "find.cpp"
-#include "loadList.cpp"
-#include "menuChoice.cpp"
-#include "print.cpp"
-#include "randomize.cpp"
-#include "saveList.cpp"
-#include "sort.cpp"
+#include <iostream>
 #include <vector>
 
 int main() {
@@ -17,7 +9,6 @@ int main() {
         "Lägg till person", "Skriv ut lista", "Sök i lista",
         "Ta bort person",   "Sortera lista",  "Slumpa lista",
         "Spara lista",      "Ladda lista",    "Avsluta"};
-    int choice;
 
     while (running) {
         std::cout << "Du har nu " << persons.size()

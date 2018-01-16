@@ -1,10 +1,8 @@
-#include "clear.cpp"
 #include "constants.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
-
 
 void loadList(std::vector<Person> &persons) {
     std::vector<Person> loaded;
