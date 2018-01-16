@@ -5,6 +5,6 @@
 
 void clear(std::string message) {
     std::cout << std::string(32, '\n') << message << std::endl;
-    std::cout << std::setw(80) << std::setfill('-') << '\n'
-              << std::setfill(' ');
+    std::cout << std::setw(80) << std::setfill('-') << '-';
+    std::cout << std::setfill(' ') << std::endl;
 }

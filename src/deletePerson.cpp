@@ -14,9 +14,9 @@ void deletePerson(std::vector<Person> &persons) {
         }
     }
     if (index > -1) {
+        clear(persons[index].firstName + " " + persons[index].lastName + " har tagits bort från listan.");
         persons.erase(persons.begin() + index);
-        std::cout << "personen togs bort.";
     } else {
-        std::cout << "personen finns inte.";
+        clear("Ingen med signaturen " + signature + " finns med i listan.");
     }
 }

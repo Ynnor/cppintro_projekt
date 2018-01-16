@@ -40,6 +40,27 @@ void addPerson(std::vector<Person> &persons) {
         }
     }
     p.signature = signature;
+
+    for (auto &p2 : persons) {
+        if (p.firstName == p2.firstName && p.lastName == p2.lastName &&
+            p.height == p2.height) {
+            std::cout << "Personen du försöker lägga till finn redan i listan. "
+                         "Välj vad du vill göra."
+                      << std::endl;
+            switch (menuChoice(std::vector<std::string>{"Ändra inmatning",
+                                                        "Återgå till meny"})) {
+            case 1:
+                addPerson(persons);
+                return;
+                break;
+            case 2:
+                clear(
+                    "Personen som försökte läggas till fanns redan i listan.");
+                return;
+                break;
+            }
+        }
+    }
     persons.push_back(p);
     clear(p.firstName + " " + p.lastName + " har lagts till listan.");
 }
