@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+// Enkryptering endligt förskjutningsprincipen
 std::string encrypt(std::string message, int key) {
     std::string encryptedString;
 
@@ -11,6 +12,7 @@ std::string encrypt(std::string message, int key) {
     return encryptedString;
 }
 
+// Dekryptering enligt förskjutningsprincipen
 std::string decrypt(std::string message, int key) {
     std::string decryptedString;
 

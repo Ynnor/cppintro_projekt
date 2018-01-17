@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+// Funktion som sparar listan till fil.
 void saveList(std::vector<Person> persons) {
     std::cout << "Till vilken fil vill du spara listan? ";
     std::string fileName, fileRow;
@@ -11,9 +12,12 @@ void saveList(std::vector<Person> persons) {
     std::ofstream outFile;
     outFile.open(fileName, std::ofstream::out | std::ofstream::trunc);
 
+    // Filen behöver inte krypteras, användaren bestämmer själv.
     std::cout << "Vill du kryptera filen?" << std::endl;
-    switch (menuChoice(std::vector<std::string>{"Ja", "Nej"})) {
+    switch (printMenu(YESNO)) {
     case 1:
+        // Krypteringen görs bara om filen lyckas öppnas, annars går programmet
+        // vidare.
         if (outFile.is_open()) {
             int key;
             std::cout << "Ange en krypteringsnyckel." << std::endl;
@@ -37,7 +41,6 @@ void saveList(std::vector<Person> persons) {
         } else {
             clear("Något gick fel vid sparning av listan.");
         }
-        outFile.close();
         return;
     case 2:
         if (outFile.is_open()) {
@@ -50,7 +53,6 @@ void saveList(std::vector<Person> persons) {
         } else {
             clear("Något gick fel vid sparning av listan.");
         }
-        outFile.close();
         return;
     }
 }

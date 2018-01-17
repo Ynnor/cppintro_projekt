@@ -2,15 +2,18 @@
 #include <algorithm>
 #include <iostream>
 
-bool byName(Person, Person);
-bool bySign(Person, Person);
-bool byHeight(Person, Person);
+// Funktion som slumpordnar listan och rensar skärmen.
+void randomize(std::vector<Person> &persons) {
+    std::random_shuffle(persons.begin(), persons.end());
+    clear("Listan har slumpordnats!");
+}
 
+// Funktion för sortering av personer. Använder sig av tre olika
+// sorteringsalgoritmer, en för namn, en för signatur och en för längd.
 void sort(std::vector<Person> &persons) {
-    std::vector<std::string> menu{"Sortera på namn", "Sortera på signatur",
-                                  "Sortera på längd"};
-    std::cout << "Välj sorteringssätt." << std::endl;
-    SortMode choice = static_cast<SortMode>(menuChoice(menu));
+
+    clear("Välj sorteringssätt.");
+    SortMode choice = static_cast<SortMode>(printMenu(SORTMENU));
     switch (choice) {
     case name:
         std::sort(persons.begin(), persons.end(), byName);
@@ -27,6 +30,7 @@ void sort(std::vector<Person> &persons) {
     }
 }
 
+// Bakar samman efternamn + förnamn och omvandlar till gemener.
 bool byName(Person i, Person j) {
     std::string name1 = i.lastName + " " + i.firstName;
     std::string name2 = j.lastName + " " + j.firstName;

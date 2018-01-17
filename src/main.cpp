@@ -3,17 +3,16 @@
 #include <vector>
 
 int main() {
+    // Initialisering av variabler.
     std::vector<Person> persons;
     bool running = true;
-    const std::vector<std::string> menu{
-        "Lägg till person", "Skriv ut lista", "Sök i lista",
-        "Ta bort person",   "Sortera lista",  "Slumpa lista",
-        "Spara lista",      "Ladda lista",    "Avsluta"};
 
+    // Huvudloopen. Körs till 9 väljs som val, då while loopen kommer att
+    // brytas.
     while (running) {
         std::cout << "Du har nu " << persons.size()
                   << " personer i din lista. Vad vill du göra härnäst?";
-        switch (menuChoice(menu)) {
+        switch (printMenu(MAINMENU)) {
         case 1:
             addPerson(persons);
             break;
